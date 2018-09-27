@@ -101,25 +101,25 @@ footer:
 social:
   - title: github
     tooltip: "Github: Code I am writing"
-    url: https://github.com/bill-c-martin
+    url: https://github.com/yuvraj-singh
   - title: linkedin
     tooltip: "Linkedin: Places I've worked"
-    url: https://www.linkedin.com/in/billmartin9
-  - title: codeschool
-    tooltip: "Codeschool: Skills I am learning"
-    url: https://www.codeschool.com/users/90602
-  - title: laracasts
-    tooltip: "Laracasts: Skills I am learning"
-    url: https://laracasts.com/@wcmarti2
-  - title: stack-overflow
-    tooltip: "Stack Overflow: Solutions I've been exchanging"
-    url: http://stackoverflow.com/users/5743565/bill-martin
+    url: https://www.linkedin.com/in/yuvraj-singh-621a6180/
+  # - title: codeschool
+  #   tooltip: "Codeschool: Skills I am learning"
+  #   url: https://www.codeschool.com/users/90602
+  # - title: laracasts
+  #   tooltip: "Laracasts: Skills I am learning"
+  #   url: https://laracasts.com/@wcmarti2
+  # - title: stack-overflow
+  #   tooltip: "Stack Overflow: Solutions I've been exchanging"
+  #   url: http://stackoverflow.com/users/5743565/bill-martin
   - title: goodreads
     tooltip: "Goodreads: Books I've been reading"
-    url: http://www.goodreads.com/billmartin
-  - title: rss
-    tooltip: Subscribe to RSS feed
-    url: /feed.xml
+    url: https://goodreads.com/yuvraj-singh
+  # - title: rss
+  #   tooltip: Subscribe to RSS feed
+  #   url: /feed.xml
 
 # Credits content
 credits: '<a href="https://github.com/bill-c-martin/bill-c-martin.github.io">Fork my portfolio on github</a>'
