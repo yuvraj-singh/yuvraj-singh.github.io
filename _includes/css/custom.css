@@ -257,6 +257,12 @@ article.blog-post blockquote p span{
   margin: 10px 0;
 }
 
+span{
+  font-size: .8em;
+  color: #999;
+  margin: 10px 0;
+}
+
 article.blog-post {
   text-align: left;
 }
