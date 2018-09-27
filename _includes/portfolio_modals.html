@@ -23,7 +23,7 @@
                                         {% assign is_multiple_apps = post.application | split: "," | size %}
                 						{% if is_multiple_apps > 1  %}
                                             {{ site.portfolio.labels.application }}s:
-                                        {% else %} 
+                                        {% else %}
                                             {{ site.portfolio.labels.application }}:
                                         {% endif  %}
                                     </strong>
