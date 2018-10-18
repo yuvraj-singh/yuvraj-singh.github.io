@@ -27,7 +27,6 @@ a.active {
 
 h1,
 h2,
-h3,
 h4,
 h5,
 h6 {
@@ -118,7 +117,8 @@ header .intro-text .skills {
         font-size: 4.75em;
     }
 
-    header .intro-text .skills {
+    header .intro-text .
+    ls {
         font-size: 1.75em;
     }
 }
