@@ -108,11 +108,22 @@
         <div class="footer">Let the countdown begin! 💍❤️</div>
     </div>
 
-    <audio autoplay loop id="background-audio">
-        <source src="those-eyes.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+   
+<audio autoplay loop muted id="background-audio">
+    <source src="those-eyes.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
 
+<script>
+    // Try to unmute the audio after the page loads
+    window.addEventListener('load', () => {
+        const audio = document.getElementById('background-audio');
+        audio.muted = false; // Attempt to unmute programmatically
+        audio.play().catch(error => {
+            console.warn("Autoplay with sound was blocked. The user needs to interact with the page to start audio.");
+        });
+    });
+</script>
     <script>
         function revealTimer() {
             document.querySelector('.reveal-button').style.display = 'none';
