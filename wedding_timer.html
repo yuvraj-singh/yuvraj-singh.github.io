@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Countdown</title>
+    <title>MY</title>
     <style>
         body {
             font-family: 'Georgia', serif;
@@ -23,12 +23,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0.6);
             z-index: 1;
         }
         .timer {
             text-align: center;
-            padding: 50px;
+            padding: 250px;
             border-radius: 12px;
             background: rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
@@ -86,7 +86,7 @@
 <body>
     <button class="reveal-button" onclick="revealTimer()">Reveal Countdown</button>
     <div class="timer" id="timer">
-        <h1>"MY" Wedding in</h1>
+        <h1>My Wedding in</h1>
         <div class="time" id="countdown">
             <div class="segment">
                 <div class="value" id="days">--</div>
@@ -108,27 +108,18 @@
         <div class="footer">Let the countdown begin! 💍❤️</div>
     </div>
 
-   
-<audio autoplay loop muted id="background-audio">
-    <source src="those-eyes.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
+    <audio autoplay loop muted id="background-audio">
+        <source src="those-eyes.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
-<script>
-    // Try to unmute the audio after the page loads
-    window.addEventListener('load', () => {
-        const audio = document.getElementById('background-audio');
-        audio.muted = false; // Attempt to unmute programmatically
-        audio.play().catch(error => {
-            console.warn("Autoplay with sound was blocked. The user needs to interact with the page to start audio.");
-        });
-    });
-</script>
     <script>
         function revealTimer() {
             document.querySelector('.reveal-button').style.display = 'none';
             document.getElementById('timer').style.display = 'block';
-            document.getElementById('background-audio').muted = false;
+            const audio = document.getElementById('background-audio');
+            audio.muted = false;
+            audio.play();
         }
 
         function updateCountdown() {
