@@ -35,7 +35,8 @@
             border: 3px solid #ff6f61;
             position: relative;
             z-index: 2;
-            width: 500px;
+            width: 600px;
+            display: none;
         }
         .timer h1 {
             font-size: 28px;
@@ -65,26 +66,42 @@
             font-size: 16px;
             color: #7d3b3b;
         }
+        .reveal-button {
+            position: relative;
+            z-index: 2;
+            font-size: 20px;
+            color: #fff;
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .reveal-button:hover {
+            background-color: #b23a48;
+        }
     </style>
 </head>
 <body>
-    <div class="timer">
+    <button class="reveal-button" onclick="revealTimer()">Reveal Countdown</button>
+    <div class="timer" id="timer">
         <h1>"MY" Wedding in</h1>
         <div class="time" id="countdown">
             <div class="segment">
-                <div class="value" id="days">0</div>
+                <div class="value" id="days">--</div>
                 <div class="label">Days</div>
             </div>
             <div class="segment">
-                <div class="value" id="hours">0</div>
+                <div class="value" id="hours">--</div>
                 <div class="label">Hours</div>
             </div>
             <div class="segment">
-                <div class="value" id="minutes">0</div>
+                <div class="value" id="minutes">--</div>
                 <div class="label">Minutes</div>
             </div>
             <div class="segment">
-                <div class="value" id="seconds">0</div>
+                <div class="value" id="seconds">--</div>
                 <div class="label">Seconds</div>
             </div>
         </div>
@@ -95,19 +112,14 @@
         <source src="those-eyes.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    
-    <script>
-        // Try to unmute the audio after the page loads
-        window.addEventListener('load', () => {
-            const audio = document.getElementById('background-audio');
-            audio.muted = false; // Attempt to unmute programmatically
-            audio.play().catch(error => {
-                console.warn("Autoplay with sound was blocked. The user needs to interact with the page to start audio.");
-            });
-        });
-    </script>
 
     <script>
+        function revealTimer() {
+            document.querySelector('.reveal-button').style.display = 'none';
+            document.getElementById('timer').style.display = 'block';
+            document.getElementById('background-audio').muted = false;
+        }
+
         function updateCountdown() {
             const targetDate = new Date("December 12, 2025 00:00:00").getTime();
             const now = new Date().getTime();
@@ -128,7 +140,6 @@
             }
         }
 
-        updateCountdown();
         setInterval(updateCountdown, 1000); // Update every second
     </script>
 </body>
