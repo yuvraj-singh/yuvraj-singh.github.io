@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Countdown</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fbe8e7;
+        }
+        .timer {
+            text-align: center;
+            padding: 30px;
+            border-radius: 12px;
+            background: #ffffff;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            border: 3px solid #ff6f61;
+        }
+        .timer h1 {
+            font-size: 28px;
+            color: #b23a48;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .time {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .time .segment {
+            text-align: center;
+            font-weight: bold;
+            color: #ff6f61;
+        }
+        .time .segment .value {
+            font-size: 48px;
+        }
+        .time .segment .label {
+            font-size: 18px;
+            color: #555;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #7d3b3b;
+        }
+    </style>
+</head>
+<body>
+    <div class="timer">
+        <h1>'MY' Wedding in</h1>
+        <div class="time" id="countdown">
+            <div class="segment">
+                <div class="value" id="days">0</div>
+                <div class="label">Days</div>
+            </div>
+            <div class="segment">
+                <div class="value" id="hours">0</div>
+                <div class="label">Hours</div>
+            </div>
+            <div class="segment">
+                <div class="value" id="minutes">0</div>
+                <div class="label">Minutes</div>
+            </div>
+            <div class="segment">
+                <div class="value" id="seconds">0</div>
+                <div class="label">Seconds</div>
+            </div>
+        </div>
+        <div class="footer">Let the countdown begin! 💍❤️</div>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const targetDate = new Date("December 12, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const timeRemaining = targetDate - now;
+
+            if (timeRemaining > 0) {
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = days;
+                document.getElementById('hours').innerText = hours;
+                document.getElementById('minutes').innerText = minutes;
+                document.getElementById('seconds').innerText = seconds;
+            } else {
+                document.querySelector('.time').innerHTML = "<div class='label'>It's our special day! 🎉💍</div>";
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000); // Update every second
+    </script>
+</body>
+</html>
